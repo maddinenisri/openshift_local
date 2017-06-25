@@ -40,3 +40,8 @@ oc login https://$(minishift ip):8443 -u developer -p developer
 oc new-project <<New Project>>
 oc policy add-role-to-user admin developer -n <<New Project>>
 oc policy add-role-to-user view -n <<New Project>> -z default
+```
+- Issue with Vert.x conainer, related to cache dir is created
+```
+oc adm policy add-scc-to-user anyuid -z default
+```
